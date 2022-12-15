@@ -1,13 +1,17 @@
 import {configureStore} from "@reduxjs/toolkit";
+import {Pokemon} from "../../../core/entities/Pokemon";
 
-const currentState = {
-    pokemons: [], // toute ma data ==> cold
+export type PokemonsStoreType = {
+    pokemons: Array<Pokemon>
+}
+
+const currentState : PokemonsStoreType = {
+    pokemons: [],
 }
 
 export enum ActionsPokemonStore {
     addPokemon = "addPokemon",
     listPokemons = "listPokemons",
-    listOnePokemon= "listOnePokemon"
 }
 
 export const reducerPokemonStore = (state = currentState, {type, payload}) => {
